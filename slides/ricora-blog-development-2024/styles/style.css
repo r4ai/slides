@@ -1,0 +1,31 @@
+ul {
+  @apply space-y-2;
+}
+
+ul > li {
+  @apply mt-2 text-zinc-950 dark:text-zinc-50;
+}
+
+ul > li > ul > li {
+  @apply text-zinc-500/80 dark:text-zinc-400/80 text-base;
+}
+
+blockquote > p {
+  @apply text-sm;
+}
+
+pre {
+  @apply my-6;
+}
+
+.mermaid {
+  @apply my-6;
+}
+
+.two-cols-header > .col-left {
+  @apply mr-2;
+}
+
+.two-cols-header > .col-right {
+  @apply ml-2;
+}

@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "ricora-blog-development-2024",
+      "path": "slides/ricora-blog-development-2024"
+    }
+  ],
+  "settings": {
+    "[typescriptreact][typescript][javascriptreact][javascript][json][jsonc]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    }
+  }
+}

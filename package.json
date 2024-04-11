@@ -1,0 +1,31 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "author": "r4ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r4ai/slides.git"
+  },
+  "bugs": {
+    "url": "https://github.com/r4ai/slides/issues"
+  },
+  "type": "module",
+  "workspaces": [
+    "slides/*"
+  ],
+  "scripts": {
+    "check": "bunx @biomejs/biome check --apply .",
+    "build": "turbo build",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.1",
+    "@types/bun": "^1.0.8",
+    "lefthook": "^1.6.9",
+    "rimraf": "^5.0.5",
+    "turbo": "^1.12.5",
+    "typescript": "^5.0.0"
+  }
+}
