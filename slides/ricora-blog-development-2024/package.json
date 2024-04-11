@@ -18,5 +18,8 @@
     "unified": "^11.0.4",
     "unocss": "^0.59.1",
     "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.43.0"
   }
 }
