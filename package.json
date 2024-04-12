@@ -12,12 +12,10 @@
     "url": "https://github.com/r4ai/slides/issues"
   },
   "type": "module",
-  "workspaces": [
-    "slides/*"
-  ],
+  "workspaces": ["slides/*"],
   "scripts": {
     "check": "bunx @biomejs/biome check --apply .",
-    "build": "turbo build",
+    "build": "turbo build && bun run ./.github/scripts/deploy-slides.ts",
     "prepare": "lefthook install"
   },
   "devDependencies": {
