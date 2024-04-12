@@ -43,6 +43,8 @@ fonts:
 1. 完成した Web サイト
 2. GitHub を利用したチーム開発
 3. 技術スタック
+   1. Astro について
+   2. unified について
 
 ---
 layout: iframe-right
