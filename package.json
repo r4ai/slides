@@ -15,7 +15,7 @@
   "workspaces": ["slides/*"],
   "scripts": {
     "check": "bunx @biomejs/biome check --apply .",
-    "build": "turbo build && bun run ./.github/scripts/deploy-slides.ts",
+    "build": "turbo build --cache-dir=.turbo && bun run ./.github/scripts/deploy-slides.ts",
     "prepare": "lefthook install"
   },
   "devDependencies": {
