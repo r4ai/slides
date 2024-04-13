@@ -1,0 +1,13 @@
+{
+  "type": "rich",
+  "version": 1.0,
+  "provider_name": "r4ai",
+  "provider_url": "https://r4ai.dev/",
+  "title": "RICORA の Web サイトを作った話",
+  "author_name": "r4ai",
+  "author_url": "https://r4ai.dev/",
+  "html": "\u003ciframe src=\"//r4ai.github.io/slides/ricora-blog-development-2024\" width=\"710\" height=\"399\" style=\"aspect-ratio:710/399; border:0; padding:0; margin:0; background:transparent;\" frameborder=\"0\" allowtransparency=\"true\" allowfullscreen=\"allowfullscreen\"\u003e\u003c/iframe\u003e\n",
+  "width": 710,
+  "height": 399,
+  "ratio": 1.7777777777777777
+}
