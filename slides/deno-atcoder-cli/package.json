@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /slides/ricora-blog-development-2024/",
+    "build": "slidev build --base /slides/deno-atcoder-cli/",
     "dev": "slidev",
     "export": "slidev export"
   },
