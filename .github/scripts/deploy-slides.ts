@@ -28,7 +28,16 @@ const slidesHtml = slideDirs
     return `<li><a href="/slides/${slideDir}">${slideDir}</a></li>`;
   })
   .join("");
+const licenseYear = () => {
+  const startYear = 2024;
+  const currentYear = new Date().getFullYear();
+  return startYear === currentYear
+    ? startYear.toString()
+    : `${startYear}-${currentYear}`;
+};
 const indexHtml = (
   await fs.readFile(path.join(import.meta.dirname, "index.html"), "utf-8")
-).replace("<!-- {{ slides }} -->", slidesHtml);
+)
+  .replaceAll("<!-- {{ slides }} -->", slidesHtml)
+  .replaceAll("<!-- {{ licenseYear }} -->", licenseYear());
 await fs.writeFile(path.join(distDir, "index.html"), indexHtml);
