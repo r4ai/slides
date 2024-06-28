@@ -42,7 +42,7 @@ contests/abc123/
 ... (略)
 ```
 
-Ref: https://github.com/r4ai/deno-atcoder-cli?tab=readme-ov-file#quick-start
+Ref: <https://github.com/r4ai/deno-atcoder-cli?tab=readme-ov-file#quick-start>
 
 ---
 
@@ -68,6 +68,8 @@ Ref: https://github.com/r4ai/deno-atcoder-cli?tab=readme-ov-file#quick-start
   ```
 
 ---
+layout: center
+---
 
 # 技術スタック
 
@@ -76,7 +78,7 @@ Ref: https://github.com/r4ai/deno-atcoder-cli?tab=readme-ov-file#quick-start
 # Cliffy
 
 - CLI Framework
-  - タブ補完の自動生成
+  - タブ補完の自動生成（fish, zsh, bash）
   - ヘルプコマンドの自動生成
 
 <<< @/snippets/cliffy.ts ts
@@ -86,7 +88,7 @@ Ref: https://github.com/r4ai/deno-atcoder-cli?tab=readme-ov-file#quick-start
 # Cliffy
 
 ```sh
-$ deno run -A ./cliffy.ts --help
+$ deno run -A https://raw.githubusercontent.com/r4ai/slides/main/slides/deno-atcoder-cli/snippets/cliffy.ts --help
 
 Usage:   hello
 Version: 0.1.0
@@ -97,11 +99,110 @@ Description:
 
 Options:
 
-  -h, --help     - Show this help.                            
-  -V, --version  - Show the version number for this program.  
+  -h, --help     - Show this help.
+  -V, --version  - Show the version number for this program.
 
 Commands:
 
   completions  - Generate shell completions.
-  world        - Prints 'Hello World!'      
+  world        - Prints 'Hello World!'
 ```
+
+---
+
+# その他
+
+- Linter: `deno lint`
+- Formatter: `deno fmt`
+- Test: `deno test`
+
+すべてDenoに同梱されている！ -> 開発の初動が早い
+
+Prettier? ESLint? Biome? Vitest? Jest? 悩まずに済む！
+
+---
+layout: center
+---
+
+# JSRはいいぞ
+
+---
+
+# JSR
+
+- Native TypeScript support
+  - 直接`.ts`をアップロード出来る
+- ECMAScript modules only
+  - CommonJS は窓から投げ捨てよう
+  - Dual package 対応のための、面倒なビルド設定からの解放
+- JSR is a superset of npm
+  - `npx jsr add @r4ai/hoge` で、package.jsonからも使用可能
+- JSDocからのAPIドキュメント自動生成
+- OIDC ID Tokenを利用した、GitHub Actions での自動デプロイ
+
+---
+
+# JSR へアップロードする最小構成
+
+```ts
+// mod.ts
+export const hello = (name: string = "World"): string => `Hello, ${name}!`;
+```
+
+```json
+// jsr.json or deno.json
+{
+  "name": "@r4ai/hello",
+  "version": "1.0.0",
+  "exports": "./mod.ts"
+}
+```
+
+デプロイの実行：
+
+```sh
+deno deploy
+```
+
+- 非常にシンプルで、簡単に公開できる！
+- ビルドも不要！
+
+---
+
+# 自動デプロイ
+
+```sh
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # The OIDC ID token is used for authentication with JSR.    
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx jsr publish
+```
+
+- `jsr.json` の `version` が変更された時に公開される
+- Changeset との組み合わせの例：<https://github.com/r4ai/remark-embed/blob/main/.github/workflows/changeset-version.yml>
+
+---
+
+# まとめ
+
+- Deno で CLI を作ると楽
+- JSR はいいぞ
+  - npmで面倒だった点が解消されている
+
+---
+layout: center
+---
+
+# ご清聴ありがとうございました

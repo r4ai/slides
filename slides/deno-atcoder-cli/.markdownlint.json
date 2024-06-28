@@ -4,5 +4,6 @@
   "no-inline-html": false,
   "line-length": false,
   "heading-style": false,
-  "blanks-around-headings": false
+  "blanks-around-headings": false,
+  "no-duplicate-heading": false
 }
