@@ -17,6 +17,6 @@
     "[typescriptreact][typescript][javascriptreact][javascript][json][jsonc]": {
       "editor.defaultFormatter": "biomejs.biome",
     },
-    "deno.enable": true,
+    "deno.enable": false,
   },
 }
