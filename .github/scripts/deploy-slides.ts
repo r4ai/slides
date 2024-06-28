@@ -25,7 +25,7 @@ for (const slideDir of slideDirs) {
 // create index.html
 const slidesHtml = slideDirs
   .map((slideDir) => {
-    return `<li><a href="/${slideDir}">${slideDir}</a></li>`;
+    return `<li><a href="/slides/${slideDir}">${slideDir}</a></li>`;
   })
   .join("");
 const indexHtml = (
