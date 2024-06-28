@@ -14,16 +14,17 @@
   "type": "module",
   "workspaces": ["slides/*"],
   "scripts": {
-    "check": "bunx @biomejs/biome check --apply .",
+    "check": "bunx @biomejs/biome check --write .",
     "build": "turbo build --cache-dir=.turbo && bun run ./.github/scripts/deploy-slides.ts",
     "prepare": "lefthook install"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.6.1",
+    "@biomejs/biome": "^1.8.3",
     "@types/bun": "^1.1.6",
-    "lefthook": "^1.6.9",
-    "rimraf": "^5.0.5",
-    "turbo": "^1.12.5",
-    "typescript": "^5.0.0"
-  }
+    "lefthook": "^1.6.18",
+    "rimraf": "^5.0.7",
+    "turbo": "^2.0.5",
+    "typescript": "^5.5.2"
+  },
+  "packageManager": "bun@1.1.3"
 }
