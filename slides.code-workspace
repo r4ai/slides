@@ -2,16 +2,21 @@
   "folders": [
     {
       "name": "root",
-      "path": "."
+      "path": ".",
     },
     {
       "name": "ricora-blog-development-2024",
-      "path": "slides/ricora-blog-development-2024"
-    }
+      "path": "slides/ricora-blog-development-2024",
+    },
+    {
+      "name": "deno-atcoder-cli",
+      "path": "slides/deno-atcoder-cli",
+    },
   ],
   "settings": {
     "[typescriptreact][typescript][javascriptreact][javascript][json][jsonc]": {
-      "editor.defaultFormatter": "biomejs.biome"
-    }
-  }
+      "editor.defaultFormatter": "biomejs.biome",
+    },
+    "deno.enable": true,
+  },
 }
